@@ -104,6 +104,7 @@ const App = () => {
         
         setScannedProduct(productData);
         setIsScanning(false);
+        setServing(100);
         showNotification('Product found!', 'success');
       } else {
         showNotification('Product not found in database', 'error');
