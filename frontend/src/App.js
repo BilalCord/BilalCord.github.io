@@ -419,7 +419,6 @@ const App = () => {
   );
 
   const renderAddFood = () => {
-    const [serving, setServing] = useState(100);
     const calculatedCalories = Math.round((scannedProduct.calories * serving) / 100);
 
     return (
