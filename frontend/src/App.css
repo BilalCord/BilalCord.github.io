@@ -36,6 +36,11 @@
   }
 }
 
+/* Dark mode support */
+.dark {
+  color-scheme: dark;
+}
+
 /* Custom animations and styles */
 .scan-overlay {
   position: absolute;
@@ -82,7 +87,10 @@
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -90,14 +98,26 @@
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }
 
 /* Button hover effects */
 button:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Progress bar animation */
@@ -134,6 +154,10 @@ button:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
+.dark .card-hover:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
 /* Loading spinner */
 .spinner {
   border: 2px solid #f3f3f3;
@@ -143,6 +167,11 @@ button:hover {
   height: 40px;
   animation: spin 1s linear infinite;
   margin: 20px auto;
+}
+
+.dark .spinner {
+  border-color: #4b5563;
+  border-top-color: #60a5fa;
 }
 
 @keyframes spin {
@@ -173,6 +202,11 @@ button:focus {
   outline-offset: 2px;
 }
 
+.dark input:focus,
+.dark button:focus {
+  outline-color: #60a5fa;
+}
+
 /* Custom gradient backgrounds */
 .gradient-bg {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -183,4 +217,192 @@ button:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Bottom navigation shadow */
+.bottom-nav {
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .bottom-nav {
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Chart container improvements */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Meal category animations */
+.meal-button {
+  transition: all 0.2s ease;
+}
+
+.meal-button:hover {
+  transform: scale(1.02);
+}
+
+.meal-button.active {
+  animation: pulse-blue 1s ease-in-out;
+}
+
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+/* Favorite heart animation */
+.favorite-heart {
+  transition: all 0.2s ease;
+}
+
+.favorite-heart:hover {
+  transform: scale(1.2);
+  color: #ef4444;
+}
+
+/* Weight entry animations */
+.weight-entry {
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Export button special effects */
+.export-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.export-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.export-button:hover::before {
+  left: 100%;
+}
+
+/* Barcode scanning frame animation */
+.scanning-frame {
+  animation: scanningPulse 2s ease-in-out infinite;
+}
+
+@keyframes scanningPulse {
+  0%, 100% {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Enhanced macro progress bars */
+.macro-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.macro-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dark mode specific improvements */
+.dark .bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #1f2937, #111827);
+}
+
+/* Enhanced focus styles for dark mode */
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  ring-color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+/* Improved button states */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Enhanced card shadows in dark mode */
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom toggle switch */
+.toggle-switch {
+  transition: all 0.3s ease;
+}
+
+.toggle-switch:hover {
+  transform: scale(1.05);
+}
+
+/* Notification improvements */
+.notification {
+  animation: slideInFromRight 0.3s ease, slideOutToRight 0.3s ease 2.7s;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
