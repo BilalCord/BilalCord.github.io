@@ -167,6 +167,7 @@ const App = () => {
     setFoodItems(prev => [...prev, newItem]);
     setDailyCalories(prev => prev + calories);
     setScannedProduct(null);
+    setServing(100);
     setCurrentView('dashboard');
     showNotification(`Added ${product.name} (${calories} cal)`, 'success');
   };
