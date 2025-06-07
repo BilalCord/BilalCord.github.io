@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Webcam from 'react-webcam';
-import { BrowserdeckageDecoder } from '@zxing/library';
+import { BrowserBarcodeReader } from '@zxing/library';
 import { 
   Camera, 
   Plus, 
