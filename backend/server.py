@@ -17,7 +17,7 @@ load_dotenv(ROOT_DIR / '.env')
 # MongoDB connection
 mongo_url = "mongodb+srv://rp0gin:bfzwas@cluster0.rphpp9y.mongodb.net/?retryWrites=true&w=majority"
 client = AsyncIOMotorClient(mongo_url)
-db = client("myAppDB")
+db = client["myAppDB"]
 
 # Create the main app without a prefix
 app = FastAPI()
