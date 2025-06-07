@@ -25,6 +25,7 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [notification, setNotification] = useState(null);
+  const [serving, setServing] = useState(100);
   
   const webcamRef = useRef(null);
   const codeReader = useRef(new BrowserBarcodeReader());
