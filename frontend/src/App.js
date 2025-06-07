@@ -27,7 +27,7 @@ const App = () => {
   const [notification, setNotification] = useState(null);
   
   const webcamRef = useRef(null);
-  const codeReader = useRef(new BrowserDecodeReader());
+  const codeReader = useRef(new BrowserBarcodeReader());
 
   useEffect(() => {
     const savedData = localStorage.getItem('calorieData');
