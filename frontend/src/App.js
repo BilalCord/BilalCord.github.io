@@ -405,6 +405,7 @@ const App = () => {
                 <button
                   onClick={() => {
                     setScannedProduct(product);
+                    setServing(100);
                     setCurrentView('add');
                   }}
                   className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
